@@ -49,12 +49,7 @@ final class Tippy_Tooltips {
 
     $action = current_action();
     $target = defined( 'TIPPY_ENQUEUE_SCRIPTS' ) ? TIPPY_ENQUEUE_SCRIPTS : true;
-    $script_url = self::get_config( 'plugin_url' ) . 'dist/js/tippy-tooltips.min.js';
-
-    // Use jsDelivr CDN
-    if( defined( 'TIPPY_ENABLE_CDN' ) && TIPPY_ENABLE_CDN ) {
-      $script_url = 'https://cdn.jsdelivr.net/gh/dmhendricks/tippy-tooltips-wordpress/dist/js/tippy-tooltips.min.js';
-    }
+    $script_url = self::get_config( 'plugin_url' ) . 'dist/js/tippy-tooltips.js';
 
     // Register script
     wp_register_script( 'tippy-tooltips', $script_url, null, self::get_config( 'version' ), true );

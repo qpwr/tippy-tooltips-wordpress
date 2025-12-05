@@ -5,8 +5,13 @@
 ;(function($) {
 
     // Initialize Tippy tooltips
-    tippy( '[data-tippy-content]', {
-        allowHTML: true
+    tippy( '[data-tooltip-template]', {
+        allowHTML: true,
+        content(reference) {
+            const id = reference.getAttribute('data-tooltip-template');
+            const template = document.getElementById(id);
+            return template.innerHTML;
+        },
     });
 
     // Remove title attribute where tooltip is present
